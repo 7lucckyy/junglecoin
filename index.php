@@ -313,6 +313,7 @@ function random_strings($length_of_string) {
         </div>
         <div class="space-90"></div>
     </div>
+
     <!--single about area end-->
 
     <!-- ico area start-->
