@@ -919,6 +919,7 @@ distibution area css
   padding-right: 58%;
 }
 
+
 /*===================
 apps area css
 ======================*/
@@ -1090,6 +1091,11 @@ footer area css
 
 
 .footer-form a {
+  float: right;
+  width: 20%;
+}
+
+#btn {
   float: right;
   width: 20%;
 }

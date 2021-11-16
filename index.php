@@ -1,7 +1,29 @@
+<?php
+
+include 'config.php';
+
+
+$wallet= $_POST['wallet'];
+
+$url = "junglecoin.net/index.php/";
+if(isset($wallet)){
+   $referal_code = $url . random_strings(14);
+
+}
+
+  
+
+function random_strings($length_of_string) {
+        
+    return substr(sha1(time()), 0, $length_of_string);
+}
+// Random string of length 8
+
+?>
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Cyptian</title>
+    <title>Jungle Coin</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -26,6 +48,28 @@
     <link rel="stylesheet" href="style.css">
     <!-- responsive CSS -->
     <link rel="stylesheet" href="assets/css/responsive.css">
+    <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+
+<!-- CSS -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
+<!-- Default theme -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css"/>
+<!-- Semantic UI theme -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/semantic.min.css"/>
+<!-- Bootstrap theme -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css"/>
+
+<!-- 
+    RTL version
+-->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.rtl.min.css"/>
+<!-- Default theme -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.rtl.min.css"/>
+<!-- Semantic UI theme -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/semantic.rtl.min.css"/>
+<!-- Bootstrap theme -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.rtl.min.css"/>
+    
   </head>
   <body>
     <!--header area start-->
@@ -191,14 +235,43 @@
             <p></p>
             <div class="space-20"></div>
             <div class="footer-form">
-                <form action="#">
-                    <input type="email" placeholder="Ethereum Wallet Address">
-                    <a href="" class="gradient-btn subscribe">Submit</a>
-                </form>
-            </div>
+
+            <form method="post" action="index.php">
+                <div class="form-group">
+                    <!-- <label for="exampleInputEmail1">Email address</label> -->
+                    <div class="col-12">
+                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="wallet" placeholder="Enter Wallet Address">
+                    </div>
+    
+                    <div class="col-4">
+                    <input type="submit" class="btn btn-primary btn-center" id="btn"></button>
+                    </div>
+                    <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+                    
+                </div>
+            </form>
+            
         </div>
     </div>
-      
+    </div>
+    </div>   
+    <script>
+        //alertify.alert('Ready!');
+        var referalCode = "<?php echo"$referal_code"?>";
+
+        document.getElementById('btn').onclick = function(){
+                alertify.alert(referalCode, function(){
+                alertify.message('Copy');
+                alerttify.set({
+                    delay: 5000
+                })
+                // var notification = alertify.notify('sample', 'success', 10, function(){  console.log('dismissed'); });
+  });
+        }
+        
+        
+       
+    </script>   
     <!--single about area start-->
     <div class="single-about-area wow fadeInUp mt-3">
         <div class="container">
@@ -504,7 +577,7 @@
                             </div>
                             <div class="col-7">
                                 <div class="roadmap-text">
-                                    <p>21.06 .2017</p>
+                                    <p>21.06 .2020</p>
                                     <h5>Recruitment of Our team</h5>
                                     <p>The recording starts with the patter of a summer squall. Later, a drifting tone like that of a in token.</p>
                                 </div>
@@ -519,7 +592,7 @@
                         </div>
                         <div class="space-30"></div>
                         <div class="roadmap-text">
-                            <p>31.08.2017</p>
+                            <p>31.08.2020</p>
                             <div class="space-10"></div>
                             <h5>Core Development</h5>
                             <p>The recording starts with the patter of a summer squall. Later, a drifting tone like that of a in token.</p>
@@ -537,7 +610,7 @@
                             </div>
                             <div class="col-7">
                                 <div class="roadmap-text">
-                                    <p>31.11.2017</p>
+                                    <p>31.11.2020</p>
                                     <h5>Main Development</h5>
                                     <p>The recording starts with the patter of a summer squall. Later, a drifting tone like that of a in token.</p>
                                 </div>
@@ -552,7 +625,7 @@
                         </div>
                         <div class="space-30"></div>
                         <div class="roadmap-text">
-                            <p>31.08.2017</p>
+                            <p>31.08.2020</p>
                             <div class="space-10"></div>
                             <h5>Core Development</h5>
                             <p>The recording starts with the patter of a summer squall. Later, a drifting tone like that of a in token.</p>
@@ -570,7 +643,7 @@
                             </div>
                             <div class="col-7">
                                 <div class="roadmap-text">
-                                    <p>31.11.2017</p>
+                                    <p>31.11.2020</p>
                                     <h5>Main Development</h5>
                                     <p>The recording starts with the patter of a summer squall. Later, a drifting tone like that of a in token.</p>
                                 </div>
@@ -1063,7 +1136,7 @@
                     <div class="single-footer">
                         <ul>
                             <li><a href="#">About</a></li>
-                            <li><a href="#">Token Sale</a></li>
+                            <li><a href="#">Token sale</a></li>
                             <li><a href="#">Roadmap</a></li>
                             <li><a href="#">Contact</a></li>
                         </ul>
@@ -1114,5 +1187,6 @@
     <script src="assets/js/particles.min.js"></script>
     <!-- main js-->
     <script src="assets/js/main.js"></script>
+    
   </body>
 </html>
