@@ -197,9 +197,9 @@
     .apps-area .heading {
         margin: 50px 0;
     }
-    body {
-        overflow-x: hidden;
-    }
+    /* body {
+        /* overflow-x: hidden; */
+     */
     .welcome-area::before {
         display: none;
     }

@@ -64,7 +64,13 @@ body{
 	font-family: 'Montserrat', sans-serif;
 	font-size: 14px;
 	color: #cbe5ff;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
+  overflow:scroll; 
+     display:block;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    -ms-transition: all .3s;
+    -o-transition: all .3s;
 
 }
 
@@ -218,6 +224,13 @@ a.single-about,
 .main-menu li.active ul li a {
   color: #fff;
 }
+
+@media screen and (max-width: 480px) {
+  body {
+      overflow-y: scroll;
+  }
+}
+
 
 /*===================
      welcome css
@@ -449,12 +462,12 @@ ico area css
   animation: upDown 2s infinite;
   text-align: center;
 }
-
+/* 
 .ico-area {
   position: relative;
   z-index: 2;
   overflow: hidden;
-}
+} */
 
 .ico-area:before {
   position: absolute;
@@ -565,7 +578,7 @@ roadmap area css
 
 .roadmap-area{
 	background: #031b69;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .single-roadmap-img img {
@@ -833,7 +846,7 @@ distibution area css
 .distibution-bg {
   position: relative;
   z-index: 2;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .distibution-bg:before {
@@ -961,7 +974,7 @@ community area css
   position: relative;
   z-index: 2;
   background: #031b69;
-  overflow:hidden;
+  /* overflow:hidden; */
 }
 
 .community-area:before {
