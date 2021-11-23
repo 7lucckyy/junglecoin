@@ -14,10 +14,11 @@ function generate_referal_code()
     return $rcode;
 }  
 if ($_SERVER['REQUEST_METHOD'] == "POST") 
+
 {
     if (isset($_POST)) 
 {
-    $wallet= $_POST['wallet'];
+    $wallet= htmlspecialchars($_POST['wallet']);
 
     if (empty($wallet) == true || strlen($wallet) < 40) 
     {
